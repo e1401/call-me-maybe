@@ -1,29 +1,68 @@
-# Call Me Maybe!
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-An assignment made for aspiring frontend developers.
+## Available Scripts
 
-## Rough sketch
+In the project directory, you can run:
 
-![](sketch.png)
+### `npm start`
 
-## Required features
-- phone section
-    - if a user clicks the green button while the numbers are not entered, give out an error message "Please enter phone number"
-    - if a user clicks the red button clear cellphone screen
-    - if a user clicks a digit on the dialpad that digit is visible on the cellphone screen
-        - existing digits are not cleared as new ones are being entered
-    - number must be formated as 09xxxxxxx or 09xxxxxxxx to be considered valid
-    - if a user clicks the green button the entered number is not in a valid format an error message is displayed on screen "<number entered> is not a valid number"
-    - if a user clicks the green button and the entered number is in a valid format a message "Calling <number entered>..." is visible on the cellphone screen
-    - if a user swiftly presses the green button two times in a row a list of successful calls is shown on cellphone screen
-    - if a user swiftly presses the red button two times in a row a list of unsuccessful calls is shown on cellphone screen
-- help section (chat bubbles)
-    - when the page opens only the first message ("Help!") is visible
-    - when a user clicks "Help!" message other messages are made visible one by one with 2 seconds delay between them being displayed
-    - last message links to online git repo
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Notes
-- web site must work on both desktop and mobile
-    - on desktop whitespace around the cellphone is expected, on mobile not so much
-- feel free to choose any web site color pallet you see fit
-- provided visual is just a starting point; feel free to make the project more appealing with your selection of colors, custom spacings, type faces, animations, round corners...
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
