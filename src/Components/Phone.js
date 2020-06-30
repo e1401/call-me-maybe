@@ -2,9 +2,10 @@ import React from 'react';
 import PhoneScreen from './PhoneScreen'
 import Keypad from './Keypad'
 
-export default function Phone() {
-    return (
-        <div className="phoneBase">
+export default class Phone extends React.Component {
+    render () {
+        return (
+            <div className="phoneBase">
             <p className='tagline'>callMeMaybe</p>
             <PhoneScreen></PhoneScreen>
             <div>
@@ -16,5 +17,6 @@ export default function Phone() {
             
 
         </div>
-    )
+        )
+    }
 }

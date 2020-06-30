@@ -81,3 +81,6 @@ export default class Keypad extends React.Component {
         )
     }
 }
+
+
+// TODO: LIFTING STATE UP https://reactjs.org/docs/lifting-state-up.html

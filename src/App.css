@@ -100,7 +100,6 @@ body {
 
 .tagline {
   font-family: Roboto;
-  font-style: normal;
   font-weight: bold;
   font-size: 24px;
   line-height: 28px;
@@ -112,8 +111,23 @@ body {
 }
 
 .screenDisplayArea {
+  
+  
   width:90%;
   height: 90%;
 
   border: 1px solid green;
+  margin:30px;
+  overflow-wrap: break-word;
+  
+}
+
+
+.displayChar {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 52px;
+  color: #8e8b8b;
 }
