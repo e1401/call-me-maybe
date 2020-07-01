@@ -2,8 +2,12 @@ import React from 'react';
 
 
 export default function Button(props) {
+
+    
+    
+
     return (
-        <button type="button" className='button' onClick=""> 
+        <button type="button" value={props.value} className='button' > 
             <p className=''>{props.value}</p>
         </button>
     )
@@ -24,3 +28,6 @@ export default function Button(props) {
 //         )
 //     }
 // }
+
+
+// onClick={e => alert(e.target.value)}
