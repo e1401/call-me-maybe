@@ -99,7 +99,7 @@ body {
 }
 
 .tagline {
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-weight: bold;
   font-size: 24px;
   line-height: 28px;
@@ -124,7 +124,7 @@ body {
 
 
 .displayChar {
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 48px;
