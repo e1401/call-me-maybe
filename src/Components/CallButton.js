@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { Component} from 'react';
+import Button from './Button'
 
+// export default function CallButton() {
+//     return(
+//         <button className='callButton'>
 
-export default function CallButton() {
-    return(
-        <button className='callButton'>
+//         </button>
+//     )
+// }
 
-        </button>
-    )
+export default class CallButton extends Component {
+    render() {
+        return (
+            <button className="callButton"></button>
+        )
+    }
 }
