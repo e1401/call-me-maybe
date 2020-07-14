@@ -50,6 +50,7 @@ body {
   border: 3px solid #8e8b8b;
   box-sizing: border-box;
   border-radius: 8px;
+  margin-bottom: 50px;
 }
 
 .keypad {
@@ -57,7 +58,7 @@ body {
   flex-direction: column;
   align-items: auto;
   /* border: 1px solid blue; */
-  padding-top: 50px;
+  /* padding-top: 50px; */
 }
 
 .keyRow {
@@ -111,17 +112,13 @@ body {
 }
 
 .screenDisplayArea {
-  
-  
-  width:90%;
+  width: 90%;
   height: 90%;
 
   border: 1px solid green;
-  margin:30px;
+  margin: 30px;
   overflow-wrap: break-word;
-  
 }
-
 
 .displayChar {
   font-family: Roboto, sans-serif;
