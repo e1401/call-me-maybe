@@ -9,30 +9,23 @@ import HangUpButton from './HangUpButton'
 
 export default function Keypad (props) {
     // console.log(props)
-    const stateValues = props.val
-    // console.log(stateValues[1])
-
-
-
-    // function buttonClick (props) {
-        
-    //     console.log(value)
-       
-
-
-        
-    // }
-
-
-    function handleButtonClick (event) {
+    const stateValues = props.val;
+    const nekiArr=[]
+    function handleButtonClick(event) {
         event.preventDefault();
-        console.log(event.target.value)
+        
+        if (event.currentTarget.value === undefined) {
+            console.log('undefined')
+        }
+        // 
+        nekiArr.push(event.currentTarget.value)
+        //https://github.com/facebook/react/issues/4745 for event.currentTarget
+        console.log(nekiArr)
         
         // buttonClick()
     }
 
     
-   
 
 
     return (
