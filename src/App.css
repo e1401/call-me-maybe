@@ -80,9 +80,9 @@ body {
   height: 58px;
   background: #8e8b8b;
   border-radius: 5px;
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif;
   font-weight: 900;
-  font-size: 1.2em;
+  font-size: 1.2em; */
 }
 
 .callButton {
@@ -127,4 +127,11 @@ body {
   font-size: 48px;
   line-height: 52px;
   color: #8e8b8b;
+}
+
+.buttonChar {
+  margin-top: 0.6rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
 }

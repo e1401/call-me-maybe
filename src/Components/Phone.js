@@ -1,5 +1,5 @@
 import React from 'react';
-import PhoneScreen from './PhoneScreen'
+
 import Keypad from './Keypad'
 
 export default class Phone extends React.Component {
@@ -8,6 +8,8 @@ export default class Phone extends React.Component {
         this.state = {
 
             value: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '#'],
+        
+
             //state na dobrom mjestu
             //keys-pressed state
             //displayed state
@@ -21,9 +23,7 @@ export default class Phone extends React.Component {
             <p className='tagline'>callMeMaybe</p>
             
             <div>
-            <PhoneScreen>
-
-            </PhoneScreen>
+           
             <Keypad val={this.state.value}>
                 
             </Keypad>
