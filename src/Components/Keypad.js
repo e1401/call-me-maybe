@@ -7,66 +7,87 @@ import HangUpButton from './HangUpButton'
 
 
 
-export default function Keypad(props) {
-    // console.log(props)
-    const stateValues = props.val;
-    const nekiArr = []
-    function handleButtonClick(event) {
-        event.preventDefault();
 
-        if (event.currentTarget.value === undefined) {
-            console.log('undefined')
-        }
-        // 
-        nekiArr.push(event.currentTarget.value)
-        //https://github.com/facebook/react/issues/4745 for event.currentTarget
-        console.log(nekiArr)
-        // return nekiArr
-        // buttonClick()
+export default class Keypad extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+
+            value: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '#'],
+            pressedKeys: []
+            //state na dobrom mjestu
+            //keys-pressed state
+            //displayed state
+        };
+        this.handleButtonClick = this.handleButtonClick.bind(this);
     }
+        // console.log(props)
+        // const this.state.value = props.val;
+         handleButtonClick = (event) => {
+            let target = event.currentTarget //via https://stackoverflow.com/questions/42089795/reactjs-cant-set-state-from-an-event-with-event-persist
+            event.preventDefault();
+            // this.setState({ pressedKeys: [...+ event.currentTarget.value] });
+            this.setState(state => {
+                const pressedKeys = [...state.pressedKeys, target.value]
+                return {
+                    pressedKeys,
+                    value: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '#'],
+                }
+            })
+            // nekiArr.push(event.currentTarget.value)
+            //https://github.com/facebook/react/issues/4745 for event.currentTarget
+            console.log(this.state)
 
-    // let displayedKeys = nekiArr
+            
+        }
 
+        
 
+        
 
-    return (
-        <div>
-            <PhoneScreen value={nekiArr}>
+        
+        
 
-
-            </PhoneScreen>
-
-            <div className='keypad'>
-
-                <div className="keyRow">
-                    <CallButton />
-                    <HangUpButton />
-                </div>
-
-                <div className="keyRow">
-                    <button id="1" className='button' value={stateValues[1]} onClick={handleButtonClick}><span className="buttonChar">{stateValues[1]}</span></button>
-                    <button className='button' value={stateValues[2]} onClick={handleButtonClick}><span className="buttonChar">{stateValues[2]}</span></button>
-                    <button className='button' value={stateValues[3]} onClick={handleButtonClick}><span className="buttonChar">{stateValues[3]}</span></button>
-                </div>
-                <div className="keyRow">
-                    <button className='button' value={stateValues[4]} onClick={handleButtonClick}><span className="buttonChar">{stateValues[4]}</span></button>
-                    <button className='button' value={stateValues[5]} onClick={handleButtonClick}><span className="buttonChar">{stateValues[5]}</span></button>
-                    <button className='button' value={stateValues[6]} onClick={handleButtonClick}><span className="buttonChar">{stateValues[6]}</span></button>
-                </div>
-                <div className="keyRow">
-                    <button className='button' value={stateValues[7]} onClick={handleButtonClick}><span className="buttonChar">{stateValues[7]}</span></button>
-                    <button className='button' value={stateValues[8]} onClick={handleButtonClick}><span className="buttonChar">{stateValues[8]}</span></button>
-                    <button className='button' value={stateValues[9]} onClick={handleButtonClick}><span className="buttonChar">{stateValues[9]}</span></button>
-                </div>
-                <div className="keyRow">
-                    <button className='button' value={stateValues[10]} onClick={handleButtonClick}><span className="buttonChar">{stateValues[10]}</span></button>
-                    <button className='button' value={stateValues[0]} onClick={handleButtonClick}><span className="buttonChar">{stateValues[0]}</span></button>
-                    <button className='button' value={stateValues[11]} onClick={handleButtonClick}><span className="buttonChar">{stateValues[11]}</span></button>
-                </div>
-            </div>
-
-        </div>
-    )
+        render() {
+                 return (
+                        <div>
+                            <PhoneScreen >
 
 
-}
+                            </PhoneScreen>
+
+                            <div className='keypad'>
+
+                                <div className="keyRow">
+                                    <CallButton />
+                                    <HangUpButton />
+                                </div>
+
+                                <div className="keyRow">
+                                    <button id="1" className='button' value={this.state.value[1]} onClick={this.handleButtonClick}><span className="buttonChar">{this.state.value[1]}</span></button>
+                                    <button className='button' value={this.state.value[2]} onClick={this.handleButtonClick}><span className="buttonChar">{this.state.value[2]}</span></button>
+                                    <button className='button' value={this.state.value[3]} onClick={this.handleButtonClick}><span className="buttonChar">{this.state.value[3]}</span></button>
+                                </div>
+                                <div className="keyRow">
+                                    <button className='button' value={this.state.value[4]} onClick={this.handleButtonClick}><span className="buttonChar">{this.state.value[4]}</span></button>
+                                    <button className='button' value={this.state.value[5]} onClick={this.handleButtonClick}><span className="buttonChar">{this.state.value[5]}</span></button>
+                                    <button className='button' value={this.state.value[6]} onClick={this.handleButtonClick}><span className="buttonChar">{this.state.value[6]}</span></button>
+                                </div>
+                                <div className="keyRow">
+                                    <button className='button' value={this.state.value[7]} onClick={this.handleButtonClick}><span className="buttonChar">{this.state.value[7]}</span></button>
+                                    <button className='button' value={this.state.value[8]} onClick={this.handleButtonClick}><span className="buttonChar">{this.state.value[8]}</span></button>
+                                    <button className='button' value={this.state.value[9]} onClick={this.handleButtonClick}><span className="buttonChar">{this.state.value[9]}</span></button>
+                                </div>
+                                <div className="keyRow">
+                                    <button className='button' value={this.state.value[10]} onClick={this.handleButtonClick}><span className="buttonChar">{this.state.value[10]}</span></button>
+                                    <button className='button' value={this.state.value[0]} onClick={this.handleButtonClick}><span className="buttonChar">{this.state.value[0]}</span></button>
+                                    <button className='button' value={this.state.value[11]} onClick={this.handleButtonClick}><span className="buttonChar">{this.state.value[11]}</span></button>
+                                </div>
+                            </div>
+
+                        </div>
+            )
+        }
+
+    }
