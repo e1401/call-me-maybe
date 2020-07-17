@@ -1,12 +1,33 @@
 import React from 'react';
-import ScreenDisplayArea from './ScreenDisplayArea';
 
-export default function PhoneScreen() {
+
+
+
+const PhoneScreen = (props) => {
+    
+    let nekiArr = props.value;
+    console.log(nekiArr)
+    // let nekiArr = ['7', '9']
+
+    
+
+
     return (
         <div className="phoneScreen">
-            <ScreenDisplayArea>
-                
-            </ScreenDisplayArea>
+
+            <div className="screenDisplayArea">
+            
+                <div className='displayChar'>                
+                  {/* {displayedNumbers} */}
+                  {nekiArr}
+                </div>
+
+            </div>
+
         </div>
     )
+
 }
+
+
+export default PhoneScreen
