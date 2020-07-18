@@ -1,7 +1,7 @@
 import React from "react";
 import PhoneScreen from './PhoneScreen';
 import CallButton from './CallButton';
-import HangUpButton from './HangUpButton'
+// import HangUpButton from './HangUpButton'
 
 
 
@@ -21,6 +21,7 @@ export default class Keypad extends React.Component {
             //displayed state
         };
         this.handleButtonClick = this.handleButtonClick.bind(this);
+        this.handleHangupButton = this.handleHangupButton.bind(this);
     }
         // console.log(props)
         // const this.state.value = props.val;
@@ -33,6 +34,8 @@ export default class Keypad extends React.Component {
                 return {
                     pressedKeys,
                     value: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '#'],
+                    // deleteButton: true,
+                    callButton: false,
                 }
             })
             // nekiArr.push(event.currentTarget.value)
@@ -42,7 +45,10 @@ export default class Keypad extends React.Component {
             
         }
 
-        
+        handleHangupButton = (event) => {
+            event.preventDefault();
+            this.setState({pressedKeys: []})
+        }
 
         
 
@@ -61,7 +67,8 @@ export default class Keypad extends React.Component {
 
                                 <div className="keyRow">
                                     <CallButton />
-                                    <HangUpButton />
+                                    {/* <HangUpButton  val={this.state.deleteButton}/> */}
+                                    <button className="hangUpButton" onClick={this.handleHangupButton}></button>
                                 </div>
 
                                 <div className="keyRow">
