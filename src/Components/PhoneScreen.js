@@ -4,10 +4,11 @@ import React from 'react';
 
 
 const PhoneScreen = (props) => {
+  
+    let nekiArr = props.val;
+    console.log(nekiArr)
     
-    // let nekiArr = props.value;
     
-    let nekiArr = ['7', '9', '6']
 
     
 

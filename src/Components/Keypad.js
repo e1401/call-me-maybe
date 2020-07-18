@@ -52,7 +52,7 @@ export default class Keypad extends React.Component {
         render() {
                  return (
                         <div>
-                            <PhoneScreen >
+                            <PhoneScreen  val={this.state.pressedKeys}>
 
 
                             </PhoneScreen>
