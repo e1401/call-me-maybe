@@ -1,6 +1,6 @@
 import React from "react";
 import PhoneScreen from './PhoneScreen';
-import CallButton from './CallButton';
+// import CallButton from './CallButton';
 // import HangUpButton from './HangUpButton'
 
 
@@ -15,13 +15,16 @@ export default class Keypad extends React.Component {
         this.state = {
 
             value: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '#'],
-            pressedKeys: []
+            pressedKeys: [],
+            notEntered: false,
+            
             //state na dobrom mjestu
             //keys-pressed state
-            //displayed state
+            
         };
         this.handleButtonClick = this.handleButtonClick.bind(this);
         this.handleHangupButton = this.handleHangupButton.bind(this);
+        this.handleCallButton = this.handleCallButton.bind(this);
     }
         // console.log(props)
         // const this.state.value = props.val;
@@ -34,8 +37,8 @@ export default class Keypad extends React.Component {
                 return {
                     pressedKeys,
                     value: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '#'],
-                    // deleteButton: true,
-                    callButton: false,
+                    
+                    
                 }
             })
             // nekiArr.push(event.currentTarget.value)
@@ -50,15 +53,30 @@ export default class Keypad extends React.Component {
             this.setState({pressedKeys: []})
         }
 
-        
+      
 
+        handleCallButton = (event) => {
+            console.log('some')
+            event.preventDefault();
+            if (this.state.pressedKeys === []) {
+                this.setState(state => ({
+                    notEntered: true
+                  }));
+            }
+            // if (this.state.pressedKeys === []) {
+            //     this.setState({notEntered: true});
+                
+                
+            // }
+    
+        }
         
-        
+      
 
-        render() {
+        render() { 
                  return (
                         <div>
-                            <PhoneScreen  val={this.state.pressedKeys}>
+                            <PhoneScreen  val={this.state.pressedKeys} >
 
 
                             </PhoneScreen>
@@ -66,8 +84,8 @@ export default class Keypad extends React.Component {
                             <div className='keypad'>
 
                                 <div className="keyRow">
-                                    <CallButton />
-                                    {/* <HangUpButton  val={this.state.deleteButton}/> */}
+                                    <button className="callButton" onClick={this.handleCallButton}></button>
+                                    
                                     <button className="hangUpButton" onClick={this.handleHangupButton}></button>
                                 </div>
 

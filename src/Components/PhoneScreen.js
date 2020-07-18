@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-
+// if a user clicks the green button while the numbers are not entered, give out an error message "Please enter phone number"
 
 const PhoneScreen = (props) => {
   
@@ -19,7 +19,7 @@ const PhoneScreen = (props) => {
             <div className="screenDisplayArea">
             
                 <div className='displayChar'>                
-                  {/* {displayedNumbers} */}
+                  
                   {nekiArr}
                 </div>
 

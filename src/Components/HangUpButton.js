@@ -13,6 +13,7 @@ import React, { Component} from 'react';
 
 export default function HangUpButton (props) {
     
+    
     return (
         <button className="hangUpButton" onClick={() => {console.log('click')}}></button>
     )
