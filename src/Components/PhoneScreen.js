@@ -6,7 +6,7 @@ import React from 'react';
 const PhoneScreen = (props) => {
   
     let nekiArr = props.val;
-    console.log(nekiArr)
+    
     
     
 

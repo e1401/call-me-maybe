@@ -53,22 +53,31 @@ export default class Keypad extends React.Component {
             this.setState({pressedKeys: []})
         }
 
-      
+        // handleButtonSwitch (){ //provjerava pressedKeys true ili flase
+        //     // console.log('Da li se čujemo?')
+        //     // const prazanState = this.state.pressedKeys
+        //     // console.log(prazanState)
+        //     // if (prazanState.length === 0) {
+        //     //     console.log('prazan array')
+        //     // } 
+        //     if (this.state.pressedKeys.length === 0) {
+        //         this.setState({notEntered: true}, () => { console.log('The state has been updated.') });
+        //         console.log('Blank screen')
+        //     }
+
+        // }
 
         handleCallButton = (event) => {
-            console.log('some')
+            // console.log('some')
             event.preventDefault();
-            if (this.state.pressedKeys === []) {
-                this.setState(state => ({
-                    notEntered: true
-                  }));
+            
+            // this.handleButtonSwitch()
+            // console.log(this.state);
+            if (this.state.pressedKeys.length === 0) {
+                this.setState({notEntered: true}, () => { console.log('The state has been updated.') });
+                console.log('Blank screen')
             }
-            // if (this.state.pressedKeys === []) {
-            //     this.setState({notEntered: true});
-                
-                
-            // }
-    
+
         }
         
       
