@@ -6,6 +6,13 @@ import React from 'react';
 const PhoneScreen = (props) => {
   
     let nekiArr = props.val;
+    let nekiMsg = props.msg;
+
+    const powerSwitch =()=> {
+        if (nekiArr.length === 0) {
+            return nekiMsg
+        } else { return nekiArr};
+    }
     
     
     
@@ -20,7 +27,7 @@ const PhoneScreen = (props) => {
             
                 <div className='displayChar'>                
                   
-                  {nekiArr}
+                  {powerSwitch()}
                 </div>
 
             </div>
