@@ -1,3 +1,5 @@
+@import "./styles/includeMedia.scss";
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -21,6 +23,20 @@ body {
   align-items: center;
   justify-content: center;
   padding: 100px;
+  @include media("<=phone") {
+    &:before {
+      content: "Please use a device with larger screen. Thank you!";
+      font-family: Roboto, sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 2em;
+      line-height: 2em-0.9em;
+      color: #8e8b8b;
+    }
+  }
+  @include media("<=tablet") {
+    padding: 0;
+  }
 }
 
 /* Phone base */
@@ -51,6 +67,35 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  @include media("<=phone") {
+    visibility: hidden;
+  }
+  @include media("<=tablet") {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.message {
+  @include media("<=tablet") {
+    // border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &:before {
+      // padding-left: 140px;
+      // border: 1px solid blue;
+      content: "CLASSIC LANDLINE PHONE";
+      // text-align: center;
+
+      font-family: Roboto, sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 52px;
+      color: #8e8b8b;
+    }
+  }
 }
 
 .phoneScreen {

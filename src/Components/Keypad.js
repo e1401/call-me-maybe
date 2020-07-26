@@ -105,6 +105,10 @@ export default class Keypad extends React.Component {
                                     <button className='button' value={this.state.value[0]} onClick={this.handleButtonClick}><span className="buttonChar">{this.state.value[0]}</span></button>
                                     <button className='button' value={this.state.value[11]} onClick={this.handleButtonClick}><span className="buttonChar">{this.state.value[11]}</span></button>
                                 </div>
+                                <div className= "message">
+                                    
+                                    
+                                </div>
                             </div>
 
                         </div>
