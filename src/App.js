@@ -1,7 +1,7 @@
 import React from 'react';
 import Phone from './Components/Phone';
 
-import './App.css';
+import './App.scss';
 
 export default function App() {
   return (
