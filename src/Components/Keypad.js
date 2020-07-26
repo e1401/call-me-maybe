@@ -17,7 +17,7 @@ export default class Keypad extends React.Component {
             value: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '#'],
             pressedKeys: [],
             notEntered: false,
-            msg: 'Enter number'
+            msg: 'Please enter phone number'
             
             //state na dobrom mjestu
             //keys-pressed state
@@ -51,7 +51,7 @@ export default class Keypad extends React.Component {
 
         handleHangupButton = (event) => {
             event.preventDefault();
-            this.setState({pressedKeys: []})
+            this.setState({pressedKeys: [], notEntered: false})
         }
 
    
@@ -64,7 +64,7 @@ export default class Keypad extends React.Component {
             // console.log(this.state);
             if (this.state.pressedKeys.length === 0) {
                 this.setState({notEntered: true}, () => { console.log('The state has been updated.') });
-                console.log('Blank screen')
+                
             }
 
         }
@@ -74,7 +74,7 @@ export default class Keypad extends React.Component {
         render() { 
                  return (
                         <div>
-                            <PhoneScreen  val={this.state.pressedKeys} msg={this.state.msg} >
+                            <PhoneScreen  val={this.state.pressedKeys} msg={this.state.msg} notEntered={this.state.notEntered} >
 
 
                             </PhoneScreen>
