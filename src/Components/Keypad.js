@@ -13,8 +13,9 @@ export default class Keypad extends React.Component {
             value: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '#'],
             pressedKeys: [],
             notEntered: false,
-            msg: ['Please enter phone number','Numbers limit reached'],
+            msg: ['Please enter phone number','Numbers limit reached', '(London) calling...'],
             tooManyNumbers: false,
+            okToDial: false, //for calling
             
             //state na dobrom mjestu
             
@@ -48,7 +49,7 @@ export default class Keypad extends React.Component {
 
         handleHangupButton = (event) => {
             event.preventDefault();
-            this.setState({pressedKeys: [], notEntered: false})
+            this.setState({pressedKeys: [], notEntered: false, okToDial: false})
         }
 
    
@@ -59,8 +60,8 @@ export default class Keypad extends React.Component {
             
             // this.handleButtonSwitch()
             // console.log(this.state);
-            if (this.state.pressedKeys.length === 0) {
-                this.setState({notEntered: true}, () => { console.log('The state has been updated.') });
+            if (this.state.pressedKeys.length === 0 || this.state.okToDial === false) {
+                this.setState({notEntered: true, okToDial: true}, () => { console.log('The state has been updated.') });
                 
             }
 
@@ -71,7 +72,7 @@ export default class Keypad extends React.Component {
         render() { 
                  return (
                         <div>
-                            <PhoneScreen  val={this.state.pressedKeys} msg={this.state.msg} notEntered={this.state.notEntered} tooManyNumbers={this.state.too}>
+                            <PhoneScreen  val={this.state.pressedKeys} msg={this.state.msg} notEntered={this.state.notEntered} tooManyNumbers={this.state.tooManyNumbers} okToDial={this.state.okToDial}>
 
 
                             </PhoneScreen>

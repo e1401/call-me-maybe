@@ -8,14 +8,16 @@ const PhoneScreen = (props) => {
     let notEnterted = props.notEntered;
     let nekiArr = props.val;
     let nekiMsg = props.msg;
+    let okToDial = props.okToDial;
 
     const powerSwitch =()=> {
         if (nekiArr.length === 0 && notEnterted === true ) {
             return nekiMsg[0]
         } else if (nekiArr.length > 47) {
             return nekiMsg[1]
-
-        } 
+        }  else if (okToDial === true) {
+            return nekiMsg[2]
+        }
         
         else  { return nekiArr};
     }
