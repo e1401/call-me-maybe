@@ -4,10 +4,6 @@ import PhoneScreen from './PhoneScreen';
 // import HangUpButton from './HangUpButton'
 
 
-
-
-
-
 export default class Keypad extends React.Component {
 
     constructor(props) {
@@ -17,10 +13,11 @@ export default class Keypad extends React.Component {
             value: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '#'],
             pressedKeys: [],
             notEntered: false,
-            msg: 'Please enter phone number'
+            msg: ['Please enter phone number','Numbers limit reached'],
+            tooManyNumbers: false,
             
             //state na dobrom mjestu
-            //keys-pressed state
+            
             
         };
         this.handleButtonClick = this.handleButtonClick.bind(this);
@@ -37,11 +34,11 @@ export default class Keypad extends React.Component {
                 const pressedKeys = [...state.pressedKeys, target.value]
                 return {
                     pressedKeys,
-                    value: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '#'],
-                    
-                    
+                    value: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '#'],  
                 }
+                
             })
+            
             // nekiArr.push(event.currentTarget.value)
             //https://github.com/facebook/react/issues/4745 for event.currentTarget
             console.log(this.state)
@@ -74,7 +71,7 @@ export default class Keypad extends React.Component {
         render() { 
                  return (
                         <div>
-                            <PhoneScreen  val={this.state.pressedKeys} msg={this.state.msg} notEntered={this.state.notEntered} >
+                            <PhoneScreen  val={this.state.pressedKeys} msg={this.state.msg} notEntered={this.state.notEntered} tooManyNumbers={this.state.too}>
 
 
                             </PhoneScreen>
