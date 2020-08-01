@@ -14,18 +14,20 @@ const PhoneScreen = (props) => {
     const powerSwitch =()=> {
         let regCheck = /^09(?:[0-9]){7,8}$/;
         let toString = nekiArr.toString();
-        var result = toString.replace(/,/g, "");
-        let regResult = regCheck.test(result)
+        var result = toString.replace(/,/g, ""); //remove commas from string eg. 1,2, => 12
+        let regResult = regCheck.test(result) //checks regex pattern if true
          console.log(regResult)  
-        if (nekiArr.length === 0 && notEnterted === true ) {
+        if (result.length === 0 && notEnterted === true ) {
             return nekiMsg[0]
-        } else if (nekiArr.length > 47) {
+        } else if (result.length > 15) {
             return nekiMsg[1]
-        }  else if ( okToDial===true && result ===true) {
+        }  else if (okToDial === true && regResult === true) {
             return nekiMsg[2]
+        }  else if (result.length > 0 && okToDial === true && regResult !== true) {
+            return nekiMsg[3]
         }
-        
-        else  { return nekiArr};
+       
+        else  { return result};
     }
     
     
