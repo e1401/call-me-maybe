@@ -9,13 +9,19 @@ const PhoneScreen = (props) => {
     let nekiArr = props.val;
     let nekiMsg = props.msg;
     let okToDial = props.okToDial;
+    
 
     const powerSwitch =()=> {
+        let regCheck = /^09(?:[0-9]){7,8}$/;
+        let toString = nekiArr.toString();
+        var result = toString.replace(/,/g, "");
+        let regResult = regCheck.test(result)
+         console.log(regResult)  
         if (nekiArr.length === 0 && notEnterted === true ) {
             return nekiMsg[0]
         } else if (nekiArr.length > 47) {
             return nekiMsg[1]
-        }  else if (okToDial === true) {
+        }  else if ( okToDial===true && result ===true) {
             return nekiMsg[2]
         }
         
