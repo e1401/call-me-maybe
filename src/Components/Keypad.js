@@ -13,7 +13,7 @@ export default class Keypad extends React.Component {
             value: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '#'],
             pressedKeys: [],
             notEntered: false,
-            msg: ['Please enter phone number','Numbers limit reached', '(London) calling...', 'Invalid number format'],
+            msg: ['Please enter phone number','Numbers limit reached', 'Calling...', 'Invalid number format'],
             tooManyNumbers: false,
             okToDial: false, //for calling
             
