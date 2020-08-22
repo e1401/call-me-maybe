@@ -16,6 +16,7 @@ export default class Keypad extends React.Component {
             msg: ['Please enter phone number','Numbers limit reached', 'Calling...', 'Invalid number format'],
             tooManyNumbers: false,
             okToDial: false, //for calling
+            CallList: []
             
             //state na dobrom mjestu
             
@@ -24,6 +25,7 @@ export default class Keypad extends React.Component {
         this.handleButtonClick = this.handleButtonClick.bind(this);
         this.handleHangupButton = this.handleHangupButton.bind(this);
         this.handleCallButton = this.handleCallButton.bind(this);
+        this.handleDoubleCallButton = this.handleDoubleCallButton.bind(this);
     }
         // console.log(props)
         // const this.state.value = props.val;
@@ -32,17 +34,20 @@ export default class Keypad extends React.Component {
             event.preventDefault();
             // this.setState({ pressedKeys: [...+ event.currentTarget.value] });
             this.setState(state => {
+                
                 const pressedKeys = [...state.pressedKeys, target.value]
+                const CallList = pressedKeys;
                 return {
                     pressedKeys,
-                    value: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '#'],  
+                    value: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '#'],
+                    CallList  
                 }
                 
             })
             
             // nekiArr.push(event.currentTarget.value)
             //https://github.com/facebook/react/issues/4745 for event.currentTarget
-            console.log(this.state)
+            // console.log(this.state)
 
             
         }
@@ -55,7 +60,7 @@ export default class Keypad extends React.Component {
    
 
         handleCallButton = (event) => {
-            // console.log('some')
+            
             event.preventDefault();
             
             // this.handleButtonSwitch()
@@ -67,12 +72,17 @@ export default class Keypad extends React.Component {
 
         }
         
+        handleDoubleCallButton = (event) => {
+            event.preventDefault();
+            console.log("This is double click");
+            
+        }
       
 
         render() { 
                  return (
                         <div>
-                            <PhoneScreen  val={this.state.pressedKeys} msg={this.state.msg} notEntered={this.state.notEntered} tooManyNumbers={this.state.tooManyNumbers} okToDial={this.state.okToDial}>
+                            <PhoneScreen  val={this.state.pressedKeys} msg={this.state.msg} notEntered={this.state.notEntered} tooManyNumbers={this.state.tooManyNumbers} okToDial={this.state.okToDial} callList={this.state.CallList}>
 
 
                             </PhoneScreen>
@@ -80,7 +90,7 @@ export default class Keypad extends React.Component {
                             <div className='keypad'>
 
                                 <div className="keyRow">
-                                    <button className="callButton" onClick={this.handleCallButton}></button>
+                                    <button className="callButton" onClick={this.handleCallButton} onDoubleClick={this.handleDoubleCallButton}></button>
                                     
                                     <button className="hangUpButton" onClick={this.handleHangupButton}></button>
                                 </div>

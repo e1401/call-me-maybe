@@ -4,12 +4,12 @@ import React from 'react';
 // if a user clicks the green button while the numbers are not entered, give out an error message "Please enter phone number"
 
 const PhoneScreen = (props) => {
-    let tooManyNumbers = props.tooManyNumbers; //for removal
+    
     let notEnterted = props.notEntered;
     let nekiArr = props.val;
     let nekiMsg = props.msg;
     let okToDial = props.okToDial;
-    
+    let callList = props.callList
 
     const powerSwitch =()=> {
         let regCheck = /^09(?:[0-9]){7,8}$/;
