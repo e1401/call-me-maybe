@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/call-me-maybe/precache-manifest.0f06ada8b4bbf23309bb4389b518142c.js"
+  "/call-me-maybe/precache-manifest.879cc64413cb0d4814222528c579b438.js"
 );
 
 self.addEventListener('message', (event) => {
