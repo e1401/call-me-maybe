@@ -13,14 +13,14 @@ export default class Keypad extends React.Component {
             value: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '#'],
             pressedKeys: [],
             notEntered: false,
-            msg: ['Please enter phone number','Numbers limit reached', 'Calling...', 'Invalid number format'],
+            msg: ['Please enter phone number','Numbers limit reached', 'Calling...', 'Invalid number format', 'Help', 'Call', 'End'],
             tooManyNumbers: false,
             okToDial: false, //for calling
             CallList: []
-            
+
             //state na dobrom mjestu
-            
-            
+
+
         };
         this.handleButtonClick = this.handleButtonClick.bind(this);
         this.handleHangupButton = this.handleHangupButton.bind(this);
@@ -34,22 +34,22 @@ export default class Keypad extends React.Component {
             event.preventDefault();
             // this.setState({ pressedKeys: [...+ event.currentTarget.value] });
             this.setState(state => {
-                
+
                 const pressedKeys = [...state.pressedKeys, target.value]
                 const CallList = pressedKeys;
                 return {
                     pressedKeys,
                     value: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '#'],
-                    CallList  
+                    CallList
                 }
-                
+
             })
-            
+
             // nekiArr.push(event.currentTarget.value)
             //https://github.com/facebook/react/issues/4745 for event.currentTarget
             // console.log(this.state)
 
-            
+
         }
 
         handleHangupButton = (event) => {
@@ -57,29 +57,29 @@ export default class Keypad extends React.Component {
             this.setState({pressedKeys: [], notEntered: false, okToDial: false})
         }
 
-   
+
 
         handleCallButton = (event) => {
-            
+
             event.preventDefault();
-            
+
             // this.handleButtonSwitch()
             // console.log(this.state);
             if (this.state.pressedKeys.length === 0 || this.state.okToDial === false) {
                 this.setState({notEntered: true, okToDial: true}, () => { console.log('The state has been updated.') });
-                
+
             }
 
         }
-        
+
         handleDoubleCallButton = (event) => {
             event.preventDefault();
             console.log("This is double click");
-            
-        }
-      
 
-        render() { 
+        }
+
+
+        render() {
                  return (
                         <div>
                             <PhoneScreen  val={this.state.pressedKeys} msg={this.state.msg} notEntered={this.state.notEntered} tooManyNumbers={this.state.tooManyNumbers} okToDial={this.state.okToDial} callList={this.state.CallList}>
@@ -90,9 +90,9 @@ export default class Keypad extends React.Component {
                             <div className='keypad'>
 
                                 <div className="keyRow">
-                                    <button className="callButton" onClick={this.handleCallButton} onDoubleClick={this.handleDoubleCallButton}></button>
-                                    
-                                    <button className="hangUpButton" onClick={this.handleHangupButton}></button>
+                                    <button className="callButton" onClick={this.handleCallButton} onDoubleClick={this.handleDoubleCallButton}><span className="buttonChar">{this.state.msg[5]}</span></button>
+                                    <button className="button"><span className="buttonChar">{this.state.msg[4]}</span></button>
+                                    <button className="hangUpButton" onClick={this.handleHangupButton}><span className="buttonChar">{this.state.msg[6]}</span></button>
                                 </div>
 
                                 <div className="keyRow">
@@ -116,8 +116,8 @@ export default class Keypad extends React.Component {
                                     <button className='button' value={this.state.value[11]} onClick={this.handleButtonClick}><span className="buttonChar">{this.state.value[11]}</span></button>
                                 </div>
                                 <div className= "message">
-                                    
-                                    
+
+
                                 </div>
                             </div>
 
